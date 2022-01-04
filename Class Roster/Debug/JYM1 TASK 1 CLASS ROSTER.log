@@ -1,4 +1,0 @@
-﻿  STUDENT.cpp
-C:\Users\B\source\repos\JYM1 TASK 1 CLASS ROSTER\STUDENT.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\B\source\repos\JYM1 TASK 1 CLASS ROSTER\STUDENT.cpp(59,16): warning C4834: discarding return value of function with 'nodiscard' attribute
-  JYM1 TASK 1 CLASS ROSTER.vcxproj -> C:\Users\B\source\repos\JYM1 TASK 1 CLASS ROSTER\Debug\JYM1 TASK 1 CLASS ROSTER.exe
