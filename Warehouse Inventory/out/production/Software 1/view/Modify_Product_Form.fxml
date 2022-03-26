@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyProductController">
+    <children>
+        <Pane layoutX="25.0" layoutY="25.0" prefHeight="450.0" prefWidth="450.0">
+            <children>
+                <VBox prefHeight="450.0" prefWidth="450.0" spacing="10.0">
+                    <children>
+                        <Label text="Modify Product">
+
+                            <VBox.margin>
+                            </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                        </Label>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" text="ID">
+                                    <HBox.margin>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="Modify_Product_Text_Id" disable="true" editable="false" promptText="Auto Generated" />
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" text="Name">
+                                    <HBox.margin>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="Modify_Product_Text_Name" />
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" text="Inv">
+                                    <HBox.margin>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="Modify_Product_Text_Stock" />
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" text="Price">
+                                    <HBox.margin>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="Modify_Product_Text_Price" />
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label prefWidth="50.0" text="Min">
+                                    <HBox.margin>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="Modify_Product_Text_Min" />
+                                <Label prefWidth="50.0" text="Max">
+                                    <HBox.margin>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="Modify_Product_Text_Max">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin></TextField>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </Pane>
+        <Pane layoutX="525.0" layoutY="25.0" prefHeight="450.0" prefWidth="450.0">
+            <children>
+                <VBox prefHeight="450.0" prefWidth="450.0" spacing="10.0">
+                    <children>
+                  <HBox alignment="TOP_RIGHT">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#search" text="Search" />
+                              <TextField fx:id="part_text_search" alignment="TOP_RIGHT" onAction="#search" promptText="Search By Part ID  or Name" />
+                     </children>
+                  </HBox>
+                        <TableView fx:id="Parts_Table" prefHeight="150.0" prefWidth="200.0">
+                            <columns>
+                                <TableColumn fx:id="Modify_Product_Pro_ID_Col" minWidth="100.0" prefWidth="100.0" text="Part ID" />
+                                <TableColumn fx:id="Modify_Product_Pro_Name_Col" minWidth="100.0" prefWidth="100.0" text="Part Name" />
+                                <TableColumn fx:id="Modify_Product_Pro_Inv_Col" minWidth="100.0" prefWidth="100.0" text="Inventory Level" />
+                                <TableColumn fx:id="Modify_Product_Pro_Price_Col" maxWidth="-1.0" minWidth="150.0" prefWidth="-1.0" text="Price/Cost per unit" />
+                            </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_RIGHT">
+                            <children>
+                                <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#addAssociatedPart" text="Add" />
+                            </children>
+                        </HBox>
+                        <TableView fx:id="AssociatedPartsTable" layoutX="10.0" layoutY="35.0" prefHeight="150.0" prefWidth="200.0">
+                            <columns>
+                                <TableColumn fx:id="Modify_Product_Pro_ID_Col_Bottom" minWidth="100.0" prefWidth="100.0" text="Part ID" />
+                                <TableColumn fx:id="Modify_Product_Pro_Name_Col_Bottom" minWidth="100.0" prefWidth="100.0" text="Part Name" />
+                                <TableColumn fx:id="Modify_Product_Pro_Inv_Col_Bottom" minWidth="100.0" prefWidth="100.0" text="Inventory Level" />
+                                <TableColumn fx:id="Modify_Product_Pro_IPrice_Col_Bottom" maxWidth="-1.0" minWidth="150.0" prefWidth="-1.0" text="Price/Cost per unit" />
+                            </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_RIGHT">
+                            <children>
+                                <Button alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeAssociatedPart" prefWidth="150.0" text="Remove Accociated Part" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" spacing="30.0">
+                            <children>
+                                <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#save" prefWidth="60.0" text="Save" />
+                                <Button fx:id="Cancel" cancelButton="true" mnemonicParsing="false" onAction="#toMain" prefWidth="60.0" text="Cancel" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

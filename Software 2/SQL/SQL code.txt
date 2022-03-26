@@ -1,0 +1,97 @@
+
+        //SQL statments
+SQL QUERIRES (easy) 
+  //sets connection
+        Connection conn = main.utilities.DBconnection.startConnection();
+        String insertStatement = "INSERT INTO countries (Country,Create_Date,Created_By,Last_Updated_By) VALUES (?,?,?,?)";
+
+        //Create prepared Statement
+        DBQuery.setPreparedStatement(conn,insertStatement);
+
+        PreparedStatement ps = DBQuery.getPreparedStatement();
+
+        //setting up data for place holders
+        String Country;
+        String Create_Date = "2020-06-04 18:27:38";
+        String Created_By = "Ben";
+        String Last_Updated_By = "Ben";
+
+        //Get Keyboard input
+        System.out.print("Country Name: ");
+        Scanner keyBoard = new Scanner(System.in);
+        Country = keyBoard.nextLine();
+
+        //Key-value Mapping
+        ps.setString(1,Country);
+        ps.setString(2,Create_Date);
+        ps.setString(3,Created_By);
+        ps.setString(4,Last_Updated_By);
+        ps.execute(); // Execute prepared statement.
+
+        //Check rows effected
+        if (ps.getUpdateCount() >0)
+            System.out.println(ps.getUpdateCount()+ " rows effected");
+
+
+
+SQL QUERIES (Hard)
+        //raw insert SQL statement
+        //String insertStatment = "INSERT INTO countries(Country, Create_Date, Created_By, Last_Updated_By) VALUES('Benzil','2021-07-21 18:27:38','Ben','Admin')";
+
+        //Variable insert
+        String countryName = "Jakemaka";
+        String createDate = "2021-07-21 18:27:38";
+        String cratedBy = "Ben";
+        String lastUpdateBy = "admin";
+        String insertStatement = "INSERT INTO countries(Country, Create_Date, Created_By, Last_Updated_By)" +
+                                 "VALUES("+
+                                "'"+ countryName +"'"+","+
+                                "'"+ createDate +"'"+","+
+                                "'"+ cratedBy +"'"+","+
+                                "'"+ lastUpdateBy +"'"+")";
+
+
+        //update statment
+        String updateStatement = "UPDATE countries SET Country = 'Benland' WHERE Country = 'Jakemaka'";
+
+        //delete statement
+        String deleteStatement = "DELETE FROM countries WHERE Country = 'Benland'";
+
+        //execute SQL statement
+        statement.execute(insertStatement);
+        statement.execute(updateStatement);
+        statement.execute(deleteStatement);
+
+        //confirm row effected
+        if (statement.getUpdateCount() > 0)
+            System.out.println("SQL worked : "+statement.getUpdateCount()+" row effected");
+        else
+            System.out.println("No Change!!");
+
+
+
+
+GETTING QUERY RESULTS
+//get statement reference
+        DBQuery.setStatement(conn);
+        Statement statement = DBQuery.getStatement();
+
+        //Select Statement
+        String selectStatement = "SELECT * FROM countries";
+        statement.execute(selectStatement); // Execute statement
+        ResultSet rs = statement.getResultSet(); // get result set
+
+        //Forward scroll resultset
+        while(resultSet.next()) {
+            int countryID = rs.getInt("country_ID");
+            String Country = rs.getNString("Country");
+            LocalDate date = rs.getDate("Create_Date").toLocalDate();
+            LocalTime time = sr.getTime("Create_Date").toLocalTime();
+            String Created_By = sr.getNString("Created_By");
+            LocalDateTime Last_Update = sr.getTimestamp("Last_Update").toLocalDateTime();
+            String Last_Updated_By = sr.getNString("Last_Updated_By");
+
+            //Print results
+            System.out.println(countryID +" | "+ Country +" | "+ date +" | "+ time +" | "+ Created_By +" | "+ Last_Update +" | "+ Last_Updated_By);
+
+        }

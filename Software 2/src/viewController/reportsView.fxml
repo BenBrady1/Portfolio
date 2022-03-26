@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewController.reportsController">
+   <children>
+      <GridPane alignment="CENTER" prefHeight="800.0" prefWidth="1600.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.0" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.0" minWidth="7.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="713.0" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="713.0" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="380.0" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="380.0" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" prefWidth="120.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#toHome" prefHeight="50.0" prefWidth="100.0" text="Exit" GridPane.columnIndex="7" GridPane.rowIndex="8">
+               <font>
+                  <Font name="Arial Narrow" size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </GridPane.margin>
+            </Button>
+            <Label text="The total number of customer appointments by type and month" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font></Label>
+            <Label text="Total number of patients by location" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font></Label>
+            <Label GridPane.columnIndex="1" GridPane.columnSpan="8" GridPane.rowIndex="6" GridPane.valignment="TOP">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font></Label>
+            <Label text="Reports" GridPane.columnIndex="3">
+               <font>
+                  <Font name="Constantia" size="48.0" />
+               </font>
+            </Label>
+            <Button fx:id="back_button" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#toHome" prefHeight="50.0" prefWidth="202.0" text="&lt;&lt;">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Label fx:id="typeMonthAnswer" alignment="CENTER" contentDisplay="CENTER" layoutX="170.0" layoutY="199.0" text="Answer" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="contactBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
+            <Label fx:id="numPatientsAnswer" alignment="CENTER" contentDisplay="CENTER" layoutX="650.0" layoutY="279.0" text="Answer" textAlignment="JUSTIFY" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1130.0" layoutY="199.0" text="Type" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1010.0" layoutY="279.0" text="Month" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="month" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </ChoiceBox>
+            <TextField fx:id="type" onAction="#typeMonth" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#typeMonth" text="&gt;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" layoutX="250.0" layoutY="359.0" text="Total number of appointments by location" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="numAppointmentsAnswer" alignment="CENTER" contentDisplay="CENTER" layoutX="890.0" layoutY="359.0" text="Answer" textAlignment="JUSTIFY" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="scheduleTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="7" GridPane.rowIndex="6" GridPane.rowSpan="3">
+               <columns>
+                  <TableColumn fx:id="apptIdCol" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="50.0" text="Appt_ID" />
+                  <TableColumn fx:id="titleCol" minWidth="-Infinity" prefWidth="52.0" text="Title" />
+                  <TableColumn fx:id="DescriptionCol" minWidth="-Infinity" prefWidth="284.0" text="Description" />
+                  <TableColumn fx:id="locationCol" minWidth="-Infinity" prefWidth="58.0" text="Location" />
+                  <TableColumn fx:id="ContactCol" minWidth="-Infinity" prefWidth="111.0" text="Contact" />
+                  <TableColumn fx:id="typeCol" minWidth="-Infinity" prefWidth="68.0" text="Type" />
+                  <TableColumn fx:id="startCol" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="110.0" text=" Start Date/Time" />
+                  <TableColumn fx:id="endCol" minWidth="-Infinity" prefWidth="106.0" text=" End Date/Time" />
+                  <TableColumn fx:id="customerIdCol" editable="false" minWidth="-Infinity" prefWidth="40.0" text="CID" />
+               </columns>
+            </TableView>
+            <Label layoutX="288.0" layoutY="410.0" text="Contact Schedule " GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#populateAppointmentTable" text="&gt;" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="TOP">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Button>
+            <Label contentDisplay="TOP" layoutX="288.0" layoutY="439.0" text="Contact ID" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="locaitonBoxAppt" onAction="#numAppointments" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <ComboBox fx:id="locationBoxPatients" onAction="#numCustomers" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

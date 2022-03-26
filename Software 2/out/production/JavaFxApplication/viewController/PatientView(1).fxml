@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewController.Patient">
+   <children>
+      <GridPane prefHeight="800.0" prefWidth="1600.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
+            <ColumnConstraints halignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="160.0" />
+            <ColumnConstraints halignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="160.0" />
+            <ColumnConstraints halignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
+            <ColumnConstraints halignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="800.0" />
+            <ColumnConstraints halignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
+            <ColumnConstraints halignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="160.0" />
+            <ColumnConstraints halignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="160.0" />
+            <ColumnConstraints halignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnSpan="10" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowSpan="10" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.12200000137090683" green="0.49933382868766785" blue="0.6100000143051147" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Button fx:id="createBox" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#create" prefHeight="50.0" prefWidth="202.0" text="Create Patient" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial Narrow" size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </GridPane.margin>
+            </Button>
+            <Label fx:id="nameLabel" alignment="CENTER" text="Name : " textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <Label text="New Patient" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Constantia" size="48.0" />
+               </font>
+            </Label>
+            <Button fx:id="back_button" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#toHome" text="&lt;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Label fx:id="zipLabel" layoutX="519.0" layoutY="491.0" text="Zip Code : " GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="addressLabel" layoutX="519.0" layoutY="491.0" text="Address : " GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="phoneLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="507.0" layoutY="491.0" text="Phone # : " textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="addressField" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField fx:id="zipField" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Label fx:id="stateLabel" layoutX="148.0" layoutY="491.0" text="Divison : " GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="countryLabel" layoutX="148.0" layoutY="491.0" text="Country : " GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="countryCombo" onAction="#getFirststLevelDivision" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <ComboBox fx:id="firstLevelDivisionComboBox" onAction="#setFirststLevelDivision" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="phoneField" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label fx:id="nameLabel2" layoutX="168.0" layoutY="401.0" text="Name : " GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="161.0" layoutY="117.0" text="Modify Patient" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Constantia" size="48.0" />
+               </font>
+            </Label>
+            <Label fx:id="zipLabel1" layoutX="152.0" layoutY="761.0" text="Zip Code : " GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="addressLabel1" layoutX="157.0" layoutY="491.0" text="Address : " GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="stateLabel1" layoutX="159.0" layoutY="671.0" text="Divison : " GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="countryLabel1" layoutX="156.0" layoutY="581.0" text="Country : " GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="phoneLabel1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="92.0" layoutY="851.0" text="Phone # : " textAlignment="RIGHT" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="createBoxM" alignment="CENTER" contentDisplay="CENTER" layoutX="209.0" layoutY="210.0" mnemonicParsing="false" onAction="#modify" prefHeight="50.0" prefWidth="202.0" text="Modify Patient" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial Narrow" size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="nameFieldM" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <ComboBox fx:id="countryComboM" layoutX="235.0" layoutY="583.0" onAction="#getFirststLevelDivisionM" prefWidth="150.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+            <ComboBox fx:id="firstLevelDivisionComboBoxM" layoutX="235.0" layoutY="673.0" onAction="#setFirststLevelDivisionM" prefWidth="150.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+            <TextField fx:id="addressFieldM" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+            <TextField fx:id="zipFieldM" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+            <TextField fx:id="phoneFieldM" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <TableView fx:id="customerTable" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.rowSpan="7">
+              <columns>
+                <TableColumn fx:id="idCol" maxWidth="-Infinity" minWidth="25.0" prefWidth="25.0" text="ID" />
+                <TableColumn fx:id="nameCol" maxWidth="-Infinity" minWidth="100.0" prefWidth="100.0" text="Customer_Name" />
+                  <TableColumn fx:id="addressCol" prefWidth="100.0" text="Address" />
+                  <TableColumn fx:id="postalCodeCol" prefWidth="75.0" text="Postal_Code" />
+                  <TableColumn fx:id="phoneCol" prefWidth="75.0" text="Phone" />
+                  <TableColumn fx:id="createDateCol" prefWidth="75.0" text="Create_Date" />
+                  <TableColumn fx:id="createByCol" prefWidth="75.0" text="Created_By" />
+                  <TableColumn fx:id="lastUpDateCol" prefWidth="75.0" text="Last_Update" />
+                  <TableColumn fx:id="lastUpdateByCol" prefWidth="75.0" text="Last_Updated_By" />
+                  <TableColumn fx:id="divisionCol" prefWidth="75.0" text="Division_ID" />
+              </columns>
+            </TableView>
+            <Label layoutX="107.0" layoutY="102.0" text="Patients" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Constantia" size="48.0" />
+               </font>
+            </Label>
+            <Button fx:id="deleteBox" alignment="CENTER" contentDisplay="CENTER" layoutX="109.0" layoutY="185.0" mnemonicParsing="false" onAction="#delete" prefHeight="50.0" prefWidth="202.0" text="Delete Patient" GridPane.columnIndex="4" GridPane.rowIndex="9">
+               <font>
+                  <Font name="Arial Narrow" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="selectorBox" alignment="CENTER" contentDisplay="CENTER" layoutX="1309.0" layoutY="745.0" mnemonicParsing="false" onAction="#getCustomerInfo" prefHeight="80.0" prefWidth="40.0" text="&gt;" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="logo1" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="IntelliDoc" underline="true" GridPane.columnIndex="4">
+               <font>
+                  <Font name="Javanese Text" size="80.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5722222222222222" centerY="0.2285714285714286" cycleMethod="REPEAT" focusAngle="8.13" focusDistance="0.023255813953488413" radius="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="0.8692901134490967" blue="0.28703704476356506" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.7764706015586853" green="0.6509804129600525" blue="0.0235294122248888" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="userIDLabel" alignment="CENTER" contentDisplay="RIGHT" text="user" GridPane.columnIndex="7">
+               <font>
+                  <Font name="Constantia" size="14.0" />
+               </font>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
